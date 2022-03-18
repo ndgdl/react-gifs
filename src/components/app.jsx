@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import SearchBar from './search_bar';
+import Gif from './gif';
 
 class App extends Component {
 
@@ -12,7 +13,7 @@ class App extends Component {
         <FaSearch style={iconStyle} />
         <SearchBar />
         <div className='selected-gif'>
-
+          <Gif />
         </div>
       </div>
       <div className='right-scene'>
