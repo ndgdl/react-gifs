@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import SearchBar from './search_bar';
 import Gif from './gif';
+import GifList from './gif_list';
 
 class App extends Component {
 
   render() {
     const iconStyle = { position: 'absolute', top: '70px', left: '60px', fontWeight: '400', fontSize: '2.6em', opacity: '0.4' }
+
     return(
     <div>
       <div className='left-scene'>
@@ -17,6 +19,7 @@ class App extends Component {
         </div>
       </div>
       <div className='right-scene'>
+        <GifList />
       </div>
     </div>
     )
