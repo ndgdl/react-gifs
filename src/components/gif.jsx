@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Gif extends Component {
+class Gif extends React.PureComponent {
   render() {
-
-    return(
-      <img src='https://media3.giphy.com/media/sYAErKBQCALjOUhq1f/giphy.gif?cid=ecf05e4772499d06f702f1d9be3b8aa3952c51d42dd81bd5&rid=giphy.gif&ct=g'
-           alt='gif'
-           className='gif'></img>
+    return (
+      <img
+        src={`https://media2.giphy.com/media/${this.props.id}/200.gif`}
+        alt={this.props.title}
+        className="gif"
+      />
     );
   }
 }

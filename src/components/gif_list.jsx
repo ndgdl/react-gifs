@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Gif from './gif';
 
-class GifList extends Component {
+class GifList extends React.PureComponent {
+  renderList = () => {
+    return this.props.gifs.map((gif) => {
+      return (
+        <Gif
+          id={gif.id}
+          key={gif.id}
+          title={gif.title}
+        />
+      );
+    });
+  }
+
   render() {
-    return(
-      <div className='gif-list'>
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
-      <Gif />
+    return (
+      <div className="gif-list">
+        {this.renderList()}
       </div>
-    )
+    );
   }
 }
 
