@@ -9,6 +9,7 @@ class GifList extends React.PureComponent {
           id={gif.id}
           key={gif.id}
           title={gif.title}
+          select={this.props.select}
         />
       );
     });

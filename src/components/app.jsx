@@ -11,8 +11,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      selectedGifId: 'sYAErKBQCALjOUhq1f',
-      selectedGifTitle: 'Robotnik',
+      selectedGifId: '3se2U9ZAJr7DW',
+      selectedGifTitle: 'let the fun begins',
       gifs: []
     };
   }
@@ -26,6 +26,13 @@ class App extends Component {
       .then(res => this.setState({ gifs: res.data }));
   }
 
+  selectGif = (target) => {
+    this.setState({
+      selectedGifId: target.id,
+      selectedGifTitle: target.title
+    });
+  }
+
   render() {
     const iconStyle = {
       position: 'absolute', top: '70px', left: '60px', fontWeight: '400', fontSize: '2.6em', opacity: '0.4'
@@ -35,13 +42,13 @@ class App extends Component {
       <div>
         <div className="left-scene">
           <FaSearch style={iconStyle} />
-          <SearchBar search={this.search}/>
+          <SearchBar search={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId} title={this.state.selectedGifTitle} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} />
+          <GifList gifs={this.state.gifs} select={this.selectGif} />
         </div>
       </div>
     );
