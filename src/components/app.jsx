@@ -26,10 +26,10 @@ class App extends Component {
       .then(res => this.setState({ gifs: res.data }));
   }
 
-  selectGif = (target) => {
+  selectGif = (gif) => {
     this.setState({
-      selectedGifId: target.id,
-      selectedGifTitle: target.title
+      selectedGifId: gif.id,
+      selectedGifTitle: gif.title
     });
   }
 
@@ -42,13 +42,13 @@ class App extends Component {
       <div>
         <div className="left-scene">
           <FaSearch style={iconStyle} />
-          <SearchBar search={this.search} />
+          <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId} title={this.state.selectedGifTitle} />
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} select={this.selectGif} />
+          <GifList gifs={this.state.gifs} selectGifFunction={this.selectGif} />
         </div>
       </div>
     );
