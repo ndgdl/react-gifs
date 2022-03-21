@@ -15,10 +15,12 @@ class App extends Component {
       selectedGifTitle: 'let the fun begins',
       gifs: []
     };
+
+    this.search('hello there');
   }
 
   search = (query) => {
-    giphy('UAbyzWuuB14EZD64Zr3IAGzoTdYBhUzg').search({
+    giphy({ apiKey: 'UAbyzWuuB14EZD64Zr3IAGzoTdYBhUzg', https: true }).search({
       q: query,
       rating: 'g',
       limit: 10
